@@ -31,8 +31,8 @@ The implementations about the Machine Learning and Neural Network algorithm by P
 
 ## Done
 
-* None
+* kNN
 
 ## Now
 
-* KNN
+* Decision Tree
