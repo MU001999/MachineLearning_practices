@@ -32,7 +32,8 @@ The implementations about the Machine Learning and Neural Network algorithm by P
 ## Done
 
 * kNN
+* Decision Tree
 
 ## Now
 
-* Decision Tree
+* Naive Bayesian
