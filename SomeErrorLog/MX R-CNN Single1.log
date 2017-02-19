@@ -1,0 +1,360 @@
+Called with argument: Namespace(dataset='PascalVOC', dataset_path='data/VOCdevkit', frequent=20, gpus='0', image_set='2007_trainval', kvstore='device', network='vgg', no_flip=False, no_shuffle=False, pretrained='model/vgg16', pretrained_epoch=0, rcnn_epoch=8, rcnn_lr=0.001, rcnn_lr_step='6', resume=False, root_path='data', rpn_epoch=8, rpn_lr=0.001, rpn_lr_step='6', work_load_list=None)
+INFO:root:########## TRAIN RPN WITH IMAGENET INIT
+{'ANCHOR_RATIOS': [0.5, 1, 2],
+ 'ANCHOR_SCALES': [8, 16, 32],
+ 'FIXED_PARAMS': ['conv1', 'conv2'],
+ 'FIXED_PARAMS_SHARED': ['conv1', 'conv2', 'conv3', 'conv4', 'conv5'],
+ 'IMAGE_STRIDE': 0,
+ 'NUM_ANCHORS': 9,
+ 'NUM_CLASSES': 21,
+ 'PIXEL_MEANS': array([ 103.939,  116.779,  123.68 ]),
+ 'RCNN_FEAT_STRIDE': 16,
+ 'RPN_FEAT_STRIDE': 16,
+ 'SCALES': [(600, 1000)],
+ 'TEST': {'BATCH_IMAGES': 1,
+          'CXX_PROPOSAL': True,
+          'HAS_RPN': False,
+          'NMS': 0.3,
+          'PROPOSAL_MIN_SIZE': 16,
+          'PROPOSAL_NMS_THRESH': 0.7,
+          'PROPOSAL_POST_NMS_TOP_N': 2000,
+          'PROPOSAL_PRE_NMS_TOP_N': 20000,
+          'RPN_MIN_SIZE': 16,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000},
+ 'TRAIN': {'ASPECT_GROUPING': True,
+           'BATCH_IMAGES': 1,
+           'BATCH_ROIS': 128,
+           'BBOX_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZATION_PRECOMPUTED': False,
+           'BBOX_REGRESSION_THRESH': 0.5,
+           'BBOX_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_WEIGHTS': array([ 1.,  1.,  1.,  1.]),
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'CXX_PROPOSAL': True,
+           'END2END': False,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'RPN_BATCH_SIZE': 256,
+           'RPN_BBOX_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 16,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000}}
+num_images 1
+wrote gt roidb to data/cache/voc_2007_trainval_gt_roidb.pkl
+append flipped images to roidb
+filtered 0 roidb entries: 2 -> 2
+providing maximum shape [('data', (1, 3, 600, 1000))] [('label', (1, 20646)), ('bbox_target', (1, 36, 37, 62)), ('bbox_weight', (1, 36, 37, 62))]
+output shape
+{'bbox_loss_output': (1L, 36L, 37L, 55L),
+ 'cls_prob_output': (1L, 2L, 333L, 55L)}
+lr 0.001 lr_epoch_diff [6] lr_iters [12]
+INFO:root:Epoch[0] Train-RPNAcc=0.636719
+INFO:root:Epoch[0] Train-RPNLogLoss=0.644680
+INFO:root:Epoch[0] Train-RPNL1Loss=0.923614
+INFO:root:Epoch[0] Time cost=4.941
+INFO:root:Saved checkpoint to "model/rpn1-0001.params"
+INFO:root:Epoch[1] Train-RPNAcc=0.857422
+INFO:root:Epoch[1] Train-RPNLogLoss=0.526991
+INFO:root:Epoch[1] Train-RPNL1Loss=0.699553
+INFO:root:Epoch[1] Time cost=4.950
+INFO:root:Saved checkpoint to "model/rpn1-0002.params"
+INFO:root:Epoch[2] Train-RPNAcc=0.960938
+INFO:root:Epoch[2] Train-RPNLogLoss=0.385486
+INFO:root:Epoch[2] Train-RPNL1Loss=0.486308
+INFO:root:Epoch[2] Time cost=4.885
+INFO:root:Saved checkpoint to "model/rpn1-0003.params"
+INFO:root:Epoch[3] Train-RPNAcc=0.962891
+INFO:root:Epoch[3] Train-RPNLogLoss=0.236836
+INFO:root:Epoch[3] Train-RPNL1Loss=0.369975
+INFO:root:Epoch[3] Time cost=4.988
+INFO:root:Saved checkpoint to "model/rpn1-0004.params"
+INFO:root:Epoch[4] Train-RPNAcc=0.962891
+INFO:root:Epoch[4] Train-RPNLogLoss=0.140526
+INFO:root:Epoch[4] Train-RPNL1Loss=0.449558
+INFO:root:Epoch[4] Time cost=5.798
+INFO:root:Saved checkpoint to "model/rpn1-0005.params"
+INFO:root:Epoch[5] Train-RPNAcc=0.974609
+INFO:root:Epoch[5] Train-RPNLogLoss=0.091690
+INFO:root:Epoch[5] Train-RPNL1Loss=0.415909
+INFO:root:Epoch[5] Time cost=4.916
+INFO:root:Saved checkpoint to "model/rpn1-0006.params"
+INFO:root:Update[13]: Change learning rate to 1.00000e-04
+INFO:root:Epoch[6] Train-RPNAcc=0.978516
+INFO:root:Epoch[6] Train-RPNLogLoss=0.070140
+INFO:root:Epoch[6] Train-RPNL1Loss=0.261684
+INFO:root:Epoch[6] Time cost=4.920
+INFO:root:Saved checkpoint to "model/rpn1-0007.params"
+INFO:root:Epoch[7] Train-RPNAcc=0.984375
+INFO:root:Epoch[7] Train-RPNLogLoss=0.055854
+INFO:root:Epoch[7] Train-RPNL1Loss=0.321608
+INFO:root:Epoch[7] Time cost=4.877
+INFO:root:Saved checkpoint to "model/rpn1-0008.params"
+INFO:root:########## GENERATE RPN DETECTION
+{'ANCHOR_RATIOS': [0.5, 1, 2],
+ 'ANCHOR_SCALES': [8, 16, 32],
+ 'FIXED_PARAMS': ['conv1', 'conv2'],
+ 'FIXED_PARAMS_SHARED': ['conv1', 'conv2', 'conv3', 'conv4', 'conv5'],
+ 'IMAGE_STRIDE': 0,
+ 'NUM_ANCHORS': 9,
+ 'NUM_CLASSES': 21,
+ 'PIXEL_MEANS': array([ 103.939,  116.779,  123.68 ]),
+ 'RCNN_FEAT_STRIDE': 16,
+ 'RPN_FEAT_STRIDE': 16,
+ 'SCALES': [(600, 1000)],
+ 'TEST': {'BATCH_IMAGES': 1,
+          'CXX_PROPOSAL': True,
+          'HAS_RPN': True,
+          'NMS': 0.3,
+          'PROPOSAL_MIN_SIZE': 16,
+          'PROPOSAL_NMS_THRESH': 0.7,
+          'PROPOSAL_POST_NMS_TOP_N': 2000,
+          'PROPOSAL_PRE_NMS_TOP_N': 20000,
+          'RPN_MIN_SIZE': 16,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000},
+ 'TRAIN': {'ASPECT_GROUPING': True,
+           'BATCH_IMAGES': 1,
+           'BATCH_ROIS': 128,
+           'BBOX_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZATION_PRECOMPUTED': False,
+           'BBOX_REGRESSION_THRESH': 0.5,
+           'BBOX_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_WEIGHTS': array([ 1.,  1.,  1.,  1.]),
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'CXX_PROPOSAL': True,
+           'END2END': False,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'RPN_BATCH_SIZE': 256,
+           'RPN_BBOX_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 16,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000}}
+num_images 1
+voc_2007_trainval gt roidb loaded from data/cache/voc_2007_trainval_gt_roidb.pkl
+generating 1/1 proposal 2000 data 0.0437s net 1.4553s
+wrote rpn proposals to data/rpn_data/voc_2007_trainval_rpn.pkl
+percentage of 0-25 0.0
+percentage of 25-50 0.0145
+percentage of 50-100 0.183
+percentage of 100-200 0.469
+percentage of 200-300 0.2265
+percentage of 300-inf 0.107
+average number of proposal 2000.0
+average recall for all: 0.450
+recall @0.50: 1.000
+recall @0.55: 1.000
+recall @0.60: 1.000
+recall @0.65: 1.000
+recall @0.70: 0.500
+recall @0.75: 0.000
+recall @0.80: 0.000
+recall @0.85: 0.000
+recall @0.90: 0.000
+recall @0.95: 0.000
+/home/mu00/桌面/MX-RCNN/rcnn/dataset/imdb.py:270: RuntimeWarning: invalid value encountered in divide
+  recalls[i] = (gt_overlaps >= t).sum() / float(num_pos)
+average recall for 0-25: nan
+recall @0.50: nan
+recall @0.55: nan
+recall @0.60: nan
+recall @0.65: nan
+recall @0.70: nan
+recall @0.75: nan
+recall @0.80: nan
+recall @0.85: nan
+recall @0.90: nan
+recall @0.95: nan
+average recall for 25-50: nan
+recall @0.50: nan
+recall @0.55: nan
+recall @0.60: nan
+recall @0.65: nan
+recall @0.70: nan
+recall @0.75: nan
+recall @0.80: nan
+recall @0.85: nan
+recall @0.90: nan
+recall @0.95: nan
+average recall for 50-100: nan
+recall @0.50: nan
+recall @0.55: nan
+recall @0.60: nan
+recall @0.65: nan
+recall @0.70: nan
+recall @0.75: nan
+recall @0.80: nan
+recall @0.85: nan
+recall @0.90: nan
+recall @0.95: nan
+average recall for 100-200: 0.450
+recall @0.50: 1.000
+recall @0.55: 1.000
+recall @0.60: 1.000
+recall @0.65: 1.000
+recall @0.70: 0.500
+recall @0.75: 0.000
+recall @0.80: 0.000
+recall @0.85: 0.000
+recall @0.90: 0.000
+recall @0.95: 0.000
+average recall for 200-300: nan
+recall @0.50: nan
+recall @0.55: nan
+recall @0.60: nan
+recall @0.65: nan
+recall @0.70: nan
+recall @0.75: nan
+recall @0.80: nan
+recall @0.85: nan
+recall @0.90: nan
+recall @0.95: nan
+average recall for 300-inf: nan
+recall @0.50: nan
+recall @0.55: nan
+recall @0.60: nan
+recall @0.65: nan
+recall @0.70: nan
+recall @0.75: nan
+recall @0.80: nan
+recall @0.85: nan
+recall @0.90: nan
+recall @0.95: nan
+INFO:root:########## TRAIN RCNN WITH IMAGENET INIT AND RPN DETECTION
+{'ANCHOR_RATIOS': [0.5, 1, 2],
+ 'ANCHOR_SCALES': [8, 16, 32],
+ 'FIXED_PARAMS': ['conv1', 'conv2'],
+ 'FIXED_PARAMS_SHARED': ['conv1', 'conv2', 'conv3', 'conv4', 'conv5'],
+ 'IMAGE_STRIDE': 0,
+ 'NUM_ANCHORS': 9,
+ 'NUM_CLASSES': 21,
+ 'PIXEL_MEANS': array([ 103.939,  116.779,  123.68 ]),
+ 'RCNN_FEAT_STRIDE': 16,
+ 'RPN_FEAT_STRIDE': 16,
+ 'SCALES': [(600, 1000)],
+ 'TEST': {'BATCH_IMAGES': 1,
+          'CXX_PROPOSAL': True,
+          'HAS_RPN': True,
+          'NMS': 0.3,
+          'PROPOSAL_MIN_SIZE': 16,
+          'PROPOSAL_NMS_THRESH': 0.7,
+          'PROPOSAL_POST_NMS_TOP_N': 2000,
+          'PROPOSAL_PRE_NMS_TOP_N': 20000,
+          'RPN_MIN_SIZE': 16,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000},
+ 'TRAIN': {'ASPECT_GROUPING': True,
+           'BATCH_IMAGES': 2,
+           'BATCH_ROIS': 128,
+           'BBOX_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZATION_PRECOMPUTED': False,
+           'BBOX_REGRESSION_THRESH': 0.5,
+           'BBOX_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_WEIGHTS': array([ 1.,  1.,  1.,  1.]),
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'CXX_PROPOSAL': True,
+           'END2END': False,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'RPN_BATCH_SIZE': 256,
+           'RPN_BBOX_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 16,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000}}
+num_images 1
+voc_2007_trainval gt roidb loaded from data/cache/voc_2007_trainval_gt_roidb.pkl
+appending ground truth annotations
+loading data/rpn_data/voc_2007_trainval_rpn.pkl
+append flipped images to roidb
+filtered 0 roidb entries: 2 -> 2
+add bounding box regression targets
+output shape
+{'bbox_loss_reshape_output': (2L, 64L, 84L),
+ 'cls_prob_reshape_output': (2L, 64L, 21L)}
+lr 0.001 lr_epoch_diff [6] lr_iters [12]
+[09:51:34] /home/mu00/mxnet/dmlc-core/include/dmlc/./logging.h:300: [09:51:33] src/storage/./pooled_storage_manager.h:80: cudaMalloc failed: out of memory
+
+Stack trace returned 9 entries:
+[bt] (0) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN4dmlc15LogMessageFatalD1Ev+0x3c) [0x7f5c54251eac]
+[bt] (1) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN5mxnet7storage23GPUPooledStorageManager5AllocEm+0x3bb) [0x7f5c54dfa3fb]
+[bt] (2) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN5mxnet11StorageImpl5AllocEmNS_7ContextE+0x57) [0x7f5c54dfd557]
+[bt] (3) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(+0x120d4ab) [0x7f5c54e164ab]
+[bt] (4) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN5mxnet6engine14ThreadedEngine15ExecuteOprBlockENS_10RunContextEPNS0_8OprBlockE+0x98) [0x7f5c54ded6c8]
+[bt] (5) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZNSt17_Function_handlerIFvvEZZN5mxnet6engine23ThreadedEnginePerDevice13PushToExecuteEPNS2_8OprBlockEbENKUlvE1_clEvEUlvE_E9_M_invokeERKSt9_Any_data+0x60) [0x7f5c54df0e30]
+[bt] (6) /usr/lib/x86_64-linux-gnu/libstdc++.so.6(+0xbb8f0) [0x7f5c472ea8f0]
+[bt] (7) /lib/x86_64-linux-gnu/libpthread.so.0(+0x76ca) [0x7f5c74b196ca]
+[bt] (8) /lib/x86_64-linux-gnu/libc.so.6(clone+0x5f) [0x7f5c748530af]
+
+[09:51:34] /home/mu00/mxnet/dmlc-core/include/dmlc/./logging.h:300: [09:51:34] src/engine/./threaded_engine.h:336: [09:51:33] src/storage/./pooled_storage_manager.h:80: cudaMalloc failed: out of memory
+
+Stack trace returned 9 entries:
+[bt] (0) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN4dmlc15LogMessageFatalD1Ev+0x3c) [0x7f5c54251eac]
+[bt] (1) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN5mxnet7storage23GPUPooledStorageManager5AllocEm+0x3bb) [0x7f5c54dfa3fb]
+[bt] (2) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN5mxnet11StorageImpl5AllocEmNS_7ContextE+0x57) [0x7f5c54dfd557]
+[bt] (3) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(+0x120d4ab) [0x7f5c54e164ab]
+[bt] (4) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN5mxnet6engine14ThreadedEngine15ExecuteOprBlockENS_10RunContextEPNS0_8OprBlockE+0x98) [0x7f5c54ded6c8]
+[bt] (5) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZNSt17_Function_handlerIFvvEZZN5mxnet6engine23ThreadedEnginePerDevice13PushToExecuteEPNS2_8OprBlockEbENKUlvE1_clEvEUlvE_E9_M_invokeERKSt9_Any_data+0x60) [0x7f5c54df0e30]
+[bt] (6) /usr/lib/x86_64-linux-gnu/libstdc++.so.6(+0xbb8f0) [0x7f5c472ea8f0]
+[bt] (7) /lib/x86_64-linux-gnu/libpthread.so.0(+0x76ca) [0x7f5c74b196ca]
+[bt] (8) /lib/x86_64-linux-gnu/libc.so.6(clone+0x5f) [0x7f5c748530af]
+
+An fatal error occurred in asynchronous engine operation. If you do not know what caused this error, you can try set environment variable MXNET_ENGINE_TYPE to NaiveEngine and run with debugger (i.e. gdb). This will force all operations to be synchronous and backtrace will give you the series of calls that lead to this error. Remember to set MXNET_ENGINE_TYPE back to empty after debugging.
+
+Stack trace returned 6 entries:
+[bt] (0) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN4dmlc15LogMessageFatalD1Ev+0x3c) [0x7f5c54251eac]
+[bt] (1) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN5mxnet6engine14ThreadedEngine15ExecuteOprBlockENS_10RunContextEPNS0_8OprBlockE+0x4ac) [0x7f5c54dedadc]
+[bt] (2) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZNSt17_Function_handlerIFvvEZZN5mxnet6engine23ThreadedEnginePerDevice13PushToExecuteEPNS2_8OprBlockEbENKUlvE1_clEvEUlvE_E9_M_invokeERKSt9_Any_data+0x60) [0x7f5c54df0e30]
+[bt] (3) /usr/lib/x86_64-linux-gnu/libstdc++.so.6(+0xbb8f0) [0x7f5c472ea8f0]
+[bt] (4) /lib/x86_64-linux-gnu/libpthread.so.0(+0x76ca) [0x7f5c74b196ca]
+[bt] (5) /lib/x86_64-linux-gnu/libc.so.6(clone+0x5f) [0x7f5c748530af]
+
+terminate called after throwing an instance of 'dmlc::Error'
+  what():  [09:51:34] src/engine/./threaded_engine.h:336: [09:51:33] src/storage/./pooled_storage_manager.h:80: cudaMalloc failed: out of memory
+
+Stack trace returned 9 entries:
+[bt] (0) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN4dmlc15LogMessageFatalD1Ev+0x3c) [0x7f5c54251eac]
+[bt] (1) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN5mxnet7storage23GPUPooledStorageManager5AllocEm+0x3bb) [0x7f5c54dfa3fb]
+[bt] (2) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN5mxnet11StorageImpl5AllocEmNS_7ContextE+0x57) [0x7f5c54dfd557]
+[bt] (3) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(+0x120d4ab) [0x7f5c54e164ab]
+[bt] (4) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN5mxnet6engine14ThreadedEngine15ExecuteOprBlockENS_10RunContextEPNS0_8OprBlockE+0x98) [0x7f5c54ded6c8]
+[bt] (5) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZNSt17_Function_handlerIFvvEZZN5mxnet6engine23ThreadedEnginePerDevice13PushToExecuteEPNS2_8OprBlockEbENKUlvE1_clEvEUlvE_E9_M_invokeERKSt9_Any_data+0x60) [0x7f5c54df0e30]
+[bt] (6) /usr/lib/x86_64-linux-gnu/libstdc++.so.6(+0xbb8f0) [0x7f5c472ea8f0]
+[bt] (7) /lib/x86_64-linux-gnu/libpthread.so.0(+0x76ca) [0x7f5c74b196ca]
+[bt] (8) /lib/x86_64-linux-gnu/libc.so.6(clone+0x5f) [0x7f5c748530af]
+
+An fatal error occurred in asynchronous engine operation. If you do not know what caused this error, you can try set environment variable MXNET_ENGINE_TYPE to NaiveEngine and run with debugger (i.e. gdb). This will force all operations to be synchronous and backtrace will give you the series of calls that lead to this error. Remember to set MXNET_ENGINE_TYPE back to empty after debugging.
+
+Stack trace returned 6 entries:
+[bt] (0) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN4dmlc15LogMessageFatalD1Ev+0x3c) [0x7f5c54251eac]
+[bt] (1) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZN5mxnet6engine14ThreadedEngine15ExecuteOprBlockENS_10RunContextEPNS0_8OprBlockE+0x4ac) [0x7f5c54dedadc]
+[bt] (2) /home/mu00/mxnet/python/mxnet/../../lib/libmxnet.so(_ZNSt17_Function_handlerIFvvEZZN5mxnet6engine23ThreadedEnginePerDevice13PushToExecuteEPNS2_8OprBlockEbENKUlvE1_clEvEUlvE_E9_M_invokeERKSt9_Any_data+0x60) [0x7f5c54df0e30]
+[bt] (3) /usr/lib/x86_64-linux-gnu/libstdc++.so.6(+0xbb8f0) [0x7f5c472ea8f0]
+[bt] (4) /lib/x86_64-linux-gnu/libpthread.so.0(+0x76ca) [0x7f5c74b196ca]
+[bt] (5) /lib/x86_64-linux-gnu/libc.so.6(clone+0x5f) [0x7f5c748530af]
+
+已放弃
