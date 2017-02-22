@@ -29,6 +29,9 @@ The implementations about the Machine Learning and Neural Network algorithm by P
 	* Decision Tree
 * MapReduce
 
+## Tools
+* Sloth
+
 ## Done
 
 * kNN
