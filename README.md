@@ -5,7 +5,7 @@ The implementations about the Machine Learning and Neural Network algorithm by P
 ## The plan ( temporarily
 * Classification
 	* k-Nearest Neighbor ( KNN
-	* Naive Bayesian
+	* Naive Bayesian Model
 	* AdaBoost
 	* Support Vector Machine ( SVM
 * Regression
