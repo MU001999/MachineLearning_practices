@@ -1,5 +1,6 @@
 
 '''
+do parse Json for the VOC example in MXNet
 in MX R-CNN
 def load_pascal_annotation(self, index):
         """
