@@ -9,6 +9,6 @@
 	* 对缺失数据较不敏感
 	* 算法简单
 	* 与其它分类方法相比误差率较小
-
+	* 适用数据类型：标称型数据			
 ### Realization of Naive Bayesian Classifier
 * First
