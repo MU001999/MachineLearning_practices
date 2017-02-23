@@ -1,1 +1,1 @@
-# the description of Naive Bayesian
+# the description of Naive Bayesian Model
