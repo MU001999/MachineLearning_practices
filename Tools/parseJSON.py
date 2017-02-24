@@ -1,6 +1,5 @@
 
 '''
-do parse Json for the VOC example in MXNet
 in MX R-CNN
 def load_pascal_annotation(self, index):
         """
@@ -84,7 +83,7 @@ def load_pascal_annotation(self, index):
             y1 = float(obj['y']) - 1
             x2 = float(obj['x']+obj['width']) - 1
             y2 = float(obj['y']+obj('height')) - 1
-            cls = class_to_index[obj['type'].lower().strip()]
+            cls = class_to_index[obj['class'].lower().strip()]
             boxes[ix, :] = [x1, y1, x2, y2]
             gt_classes[ix] = cls
             overlaps[ix, cls] = 1.0
