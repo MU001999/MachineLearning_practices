@@ -1,6 +1,7 @@
 '''
 Naive Bayesian Model
 '''
+import argparse
 
 
 def loadData():
@@ -15,9 +16,14 @@ def calculate():
     pass
 
 
-def main():
+def main(agrs):
+    pass
+
+
+def arg_parse():
     pass
 
 
 if __name__ == '__main__':
-    main()
+    args = arg_parse()
+    main(args)
