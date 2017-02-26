@@ -48,14 +48,13 @@ def load_pascal_annotation(self, index):
                         'flipped': False})
         return roi_rec
 '''
-import json
 def load_pascal_annotation(self, index):
         """
         for a given index, load image and bounding boxes info from XML file
         :param index: index of a specific image
         :return: record['boxes', 'gt_classes', 'gt_overlaps', 'flipped']
         """
-        import xml.etree.ElementTree as ET
+        import json
         roi_rec = dict()
         roi_rec['image'] = self.image_path_from_index(index)
         size = cv2.imread(roi_rec['image']).shape
@@ -65,7 +64,7 @@ def load_pascal_annotation(self, index):
         filename = os.path.join(self.data_path, 'Annotations', index + '.json')
         with open(filename,'r') as f:
             tree = json.load(f)
-        objs = tree.findall('object') tree[0]['annotations']
+        objs = tree[0]['annotations']
         if not self.config['use_diff']:
             non_diff_objs = [obj for obj in objs if int(obj['difficult']) == 0]
             objs = non_diff_objs
