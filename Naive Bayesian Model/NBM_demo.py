@@ -29,12 +29,41 @@ def trainNBM():
     numAll = len(data)
     simpleNBM = {}
     for i in range(0,numAll):
-        for item in data[numAll]:
+        for item in data[i]:
             for word in item:
                 if word not in simpleNBM:
                     simpleNBM[word] = [0.0,0.0]
-    # the process
+    for word in simpleNBM:
+        simpleNBM[word][0] = (calPxc(word,'T',data)*calPc('T',data)*1.0)/calPx(word,data)
+        simpleNBM[word][1] = (calPxc(word,'F',data)*calPc('F',data)*1.0)/calPx(word.data)
     return simpleNBM
+
+
+def calPxc(word,cls,data):
+    numXinC=0
+    for i in data:
+        for j in data:
+            if i[j]==cls and word in j:
+                numXinC+=1
+    return numXinC*1.0/float(len(data)*calPc(cls,data))
+
+
+def calPc(cls,data):
+    numCls=0
+    for i in data:
+        for j in i:
+            if i[j] == cls:
+                numCls+=1
+    return numCls*1.0/float(len(data))
+
+
+def calPx(word,data):
+    numWord=0
+    for i in data:
+        for j in i:
+            if word in j:
+                numWord+=1
+    return numWord*1.0/float(len(data))
 
 
 def predictData(url):
