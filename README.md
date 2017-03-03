@@ -1,7 +1,6 @@
 # MachineLearning_Practices
 
-The implementations about the Machine Learning and Neural Network algorithm by Python.
-
+The implementations about the Machine Learning and Neural Network algorithm by Python.<br>Now these are all incomplete.
 ## The plan ( temporarily
 * Classification
 	* k-Nearest Neighbor ( KNN
@@ -42,7 +41,6 @@ The implementations about the Machine Learning and Neural Network algorithm by P
 
 * kNN
 * Decision Tree
+* Naive Bayesian
 
 ## Now
-
-* Naive Bayesian
