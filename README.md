@@ -44,3 +44,4 @@ The implementations about the Machine Learning and Neural Network algorithm by P
 * Naive Bayesian
 
 ## Now
+* Logistic
