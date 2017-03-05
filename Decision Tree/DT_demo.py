@@ -69,7 +69,7 @@ def createTree(dataSet, labels):
     if classList.count(classList[0]) == len(classList):
         return classList[0]
     if len(dataSet[0]) == 1:
-        return majorityCnt(ClassList)
+        return majorityCnt(classList)
     bestFeat = chooseBestFeatureToSplit(dataSet)
     bestFeatLabel = labels[bestFeat]
     myTree = {bestFeatLabel:{}}
@@ -78,7 +78,7 @@ def createTree(dataSet, labels):
     uniqueVals = set(featValues)
     for value in uniqueVals:
         subLabels = labels[:]
-        myTree[bestFeatLabel][value = creatTree(splitDataSet(dataSet, bestFeat, value), labels)]
+        myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value), labels)
     return myTree
 
 
