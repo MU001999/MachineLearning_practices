@@ -23,3 +23,17 @@
 数值型和标称型数据
 
 ## 例子中gradAscent()函数的解析
+### dataMaxtrix
+输入数据，为m * n的矩阵，m为样本数量，n为特征数量
+### alpha
+步长，避免摆钟
+### maxCycles
+最大迭代次数
+### weighs
+n * 1的权重矩阵，n与特征数量相同
+### h
+每次sigmoid函数的求值结果，为n * 1的矩阵
+### error
+作为误差函数，结果为m * 1的矩阵
+### weights = weights + alpha * dataMatrix.transpose() * error
+每个权值的变化都是相应m个样本数量的特征量与步长及误差方向相乘的结果
