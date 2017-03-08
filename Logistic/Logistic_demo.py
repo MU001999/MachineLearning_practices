@@ -41,7 +41,7 @@ def gradAscent(dataMatIn, classLabels):
 
 def plotBestFit(weights):
     dataMat, labelMat = loadDataSet()
-    dataArr = arrat(dataMat)
+    dataArr = array(dataMat)
     n = shape(dataArr)[0]
     xcord1 = []; ycord1 = []
     xcord2 = []; ycord2 = []
