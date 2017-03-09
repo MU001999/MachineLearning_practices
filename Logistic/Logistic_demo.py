@@ -39,6 +39,10 @@ def gradAscent(dataMatIn, classLabels):
     return weights
 
 
+def stocGradAscent():
+    pass
+
+
 def plotBestFit(weights):
     dataMat, labelMat = loadDataSet()
     dataArr = array(dataMat)
