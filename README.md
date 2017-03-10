@@ -42,6 +42,7 @@ The implementations about the Machine Learning and Neural Network algorithm by P
 * kNN
 * Decision Tree
 * Naive Bayesian
+* Logistic
 
 ## Now
-* Logistic
+* Support Vector Machine ( SVM
