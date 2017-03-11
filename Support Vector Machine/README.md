@@ -1,5 +1,6 @@
 # Support Vector Machine
 > 支持向量机
+
 #### 优点
 * 泛化错误率低
 * 计算开销不大
