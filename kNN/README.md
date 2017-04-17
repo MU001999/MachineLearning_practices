@@ -1,4 +1,4 @@
-# the description of kNN :
+# The description of kNN :
 
 1.对一个输入的新数据与已知的n个数据进行比较。
 
@@ -11,3 +11,9 @@
 ### 关于一维至N维的相似度计算问题推演
 
 ![](http://www.jusot.com/wp-content/uploads/2017/03/16300000349743126968424616674_s-300x125.jpg)
+
+### The Demo
+
+1. 构建如下图所示的数据集
+1. `python kNN.py --train --dataSet dataSet_path --dim num_dim` 执行训练
+1. ·python kNN.py --predict --data data_path· 预测数据
