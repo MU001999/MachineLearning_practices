@@ -15,5 +15,5 @@
 ### The Demo
 
 1. 构建如下图所示的数据集
-1. `python kNN.py --train --dataSet dataSet_path --dim num_dim` 执行训练
-1. ·python kNN.py --predict --data data_path· 预测数据
+1. `python kNN.py --train --dataSet dataSet_path --dim num_dim` 执行训练，生成dataSet_proposed.csv
+1. `python kNN.py --predict --proposed proposed_path --data data_path` 预测数据类别
