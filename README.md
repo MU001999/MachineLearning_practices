@@ -36,10 +36,11 @@ The implementations about the Machine Learning and Neural Network algorithm by P
 
 * MXNet
 * Tensorflow
+* Keras
 
 ## Done
 
-* kNN
+* k-Nearest Neighbor (upgrading)
 * Decision Tree
 * Naive Bayesian
 * Logistic
