@@ -26,10 +26,10 @@ def upload_file():
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        res = c10p.predict(file)
+        res = c10p.predict(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         return json.dumps(res)
     return jsonify({'error': "Not success"})
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
