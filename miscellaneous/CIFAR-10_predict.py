@@ -4,7 +4,6 @@ import json
 import numpy as np
 import mxnet as mx
 import pickle
-import Image
 from collections import namedtuple
 
 
