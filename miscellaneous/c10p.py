@@ -8,7 +8,7 @@ from collections import namedtuple
 
 
 def load_batches_meta():
-    file = open('cifar-10/batches.meta', 'rb')
+    file = open('batches.meta', 'rb')
     datadict = pickle.load(file)
     file.close()
     return datadict['label_names']
@@ -29,7 +29,7 @@ def predict(img):
     prob = mod.predict(X=val)
     prob = np.squeeze(prob)
     a = np.argsort(prob)[::-1]
-    return [{'class': labels[i], 'probability': prob[i]} for i in a[0:5]]
+    return [{'class': labels[i], 'probability': '{%.2f}'%(prob[i])} for i in a[0:5]]
 
 
 if __name__ == "__main__":
