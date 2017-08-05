@@ -36,7 +36,7 @@ train_generator = train_datagen.flow_from_directory(
 model.fit_generator(
     train_generator,
     steps_per_epoch=2000,
-    epochs = 50
+    epochs = 8
 )
 
 model.save_weights('first_try.h5')
@@ -51,7 +51,7 @@ model.compile(optimizer=SGD(lr=0.0001, momentum=0.9), loss='categorical_crossent
 model.fit_generator(
     train_generator,
     steps_per_epoch=2000,
-    epochs = 50
+    epochs = 8
 )
 
 model.save_weights('res.h5')
