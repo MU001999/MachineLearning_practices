@@ -27,31 +27,45 @@ train_datagen = ImageDataGenerator(
         zoom_range=0.2,
         horizontal_flip=True)
 
+test_datagen = ImageDataGenerator(rescale=1./255)
+
 train_generator = train_datagen.flow_from_directory(
     'train',
     target_size=(224, 224),
     batch_size=batch_size
 )
 
-model.fit_generator(
-    train_generator,
-    steps_per_epoch=2000,
-    epochs = 8
+validation_generator = test_datagen.flow_from_directory(
+        'test',
+        target_size=(224, 224),
+        batch_size=batch_size
 )
 
-model.save_weights('first_try.h5')
+model.fit_generator(
+    train_generator,
+    steps_per_epoch=2000 // batch_size,
+    epochs = 20,
+    validation_data=validation_generator,
+    validation_steps=800 // batch_size
+)
 
-for layer in model.layers[:88]:
+for layer in model.layers[:82]:
     layer.trainable = False
-for layer in model.layers[88:]:
+for layer in model.layers[82:]:
     layer.trainable = True
 
 model.compile(optimizer=SGD(lr=0.0001, momentum=0.9), loss='categorical_crossentropy')
 
 model.fit_generator(
     train_generator,
-    steps_per_epoch=2000,
-    epochs = 8
+    steps_per_epoch=2000 // batch_size,
+    epochs = 20,
+    validation_data=validation_generator,
+    validation_steps=800 // batch_size
 )
 
+with open('mod.json', 'w') as f:
+    f.write(model.to_json())
+    
 model.save_weights('res.h5')
+
