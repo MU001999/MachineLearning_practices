@@ -63,9 +63,6 @@ model.fit_generator(
     validation_data=validation_generator,
     validation_steps=800 // batch_size
 )
-
-with open('mod.json', 'w') as f:
-    f.write(model.to_json())
     
 model.save_weights('res.h5')
 
